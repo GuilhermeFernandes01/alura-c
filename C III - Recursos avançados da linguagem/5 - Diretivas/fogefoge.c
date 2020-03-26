@@ -61,9 +61,10 @@ void fantasmas() {
 int acabou() {
     POSICAO pos;
 
-    int fogefogenomapa = encontramapa(&m, &pos, HEROI);
+    int perdeu = !encontramapa(&m, &pos, HEROI);
+	int ganhou = !encontramapa(&m, &pos, FANTASMA);
 
-    return !fogefogenomapa;
+    return ganhou || perdeu;
 }
 
 void move(char direcao) {
